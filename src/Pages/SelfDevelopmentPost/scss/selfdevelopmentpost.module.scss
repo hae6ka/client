@@ -1,0 +1,31 @@
+.post {
+    padding: 30px;
+
+    .post__title {
+        font-size: 26px;
+        font-weight: 500;
+    }
+
+    .post__text {
+        padding: 10px;
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .post__error {
+        text-align: center;
+        font-size: 36px;
+        font-weight: 500;
+        margin-top: 20%;
+    }
+
+    .post__link {
+        display: block;
+        margin-top: 20px;
+        text-align: center;
+        font-size: 20px;
+        font-weight: 300;
+        text-decoration: none;
+        color: rgb(38, 181, 247);
+    }
+}

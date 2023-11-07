@@ -1,0 +1,20 @@
+.block_new {
+    width: 120px;
+    height: 50px;
+    display: flex;
+    margin: auto 0 auto 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #C7FF50;
+    font-weight: 600;
+    font-size: 21px;
+}
+
+@media(max-width: 470px) {
+    .block_new {
+        font-size: 18px;
+        width: 80px;
+        height: 30px;
+    }
+}
