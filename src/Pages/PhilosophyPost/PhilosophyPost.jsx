@@ -1,5 +1,5 @@
-import Header from '../../Components/Header/Header';
 import Footer from '../../Components/Footer/Footer';
+import Header from '../../Components/Header/Header';
 import { useEffect, useCallback, useState } from "react";
 import {
     Link, useParams
@@ -9,13 +9,13 @@ import css from '../../css/post.module.css';
 
 
 
-function SelfDevelopment() {
+function PhilosophyPost() {
     const params = useParams()
 
     const [post, setPost] = useState(null)
     
     const fetchPost = useCallback(async () => {
-        const { data } = await axios.get(`/selfdevelopment/${params.id}`);
+        const { data } = await axios.get(`/philosophy/${params.id}`);
         setPost(data);
     }, [params.id])
 
@@ -62,4 +62,4 @@ function SelfDevelopment() {
     )
 }
 
-export default SelfDevelopment;
+export default PhilosophyPost;

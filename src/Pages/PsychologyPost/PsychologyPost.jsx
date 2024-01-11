@@ -9,13 +9,13 @@ import css from '../../css/post.module.css';
 
 
 
-function SelfDevelopment() {
+function PsychologyPost() {
     const params = useParams()
 
     const [post, setPost] = useState(null)
     
     const fetchPost = useCallback(async () => {
-        const { data } = await axios.get(`/selfdevelopment/${params.id}`);
+        const { data } = await axios.get(`/psychology/${params.id}`);
         setPost(data);
     }, [params.id])
 
@@ -62,4 +62,4 @@ function SelfDevelopment() {
     )
 }
 
-export default SelfDevelopment;
+export default PsychologyPost;

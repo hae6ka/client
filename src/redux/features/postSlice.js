@@ -13,14 +13,18 @@ const initialState = {
 //================================= SelfDevelopment =============================================
 export const addSelfDevelopmentPost = createAsyncThunk(
     '/selfdevelopment/addpost',
-    async ({ title, text, imgUrl, popularity, password }) => {
+    async (formdata) => {
         try {
-            const { data } = await axios.post('/selfdevelopment/addpost', {
-                title,
-                text,
-                imgUrl,
-                popularity,
-                password
+            let obj = {}
+
+            for (let [i, j] of formdata) {
+                obj[i] = j;
+            }
+
+            const { data } = await axios.post('/selfdevelopment/addpost', {...obj}, {
+                headers: {
+                    'Content-Type':  'multipart/form-data'
+                }
             });
 
             return data;
@@ -48,14 +52,18 @@ export const getSelfDevelopmentPosts = createAsyncThunk(
 //================================= Philosophy =============================================
 export const addPhilosophyPost = createAsyncThunk(
     '/philosophy/addpost',
-    async ({ title, text, imgUrl, popularity, password }) => {
+    async (formdata) => {
         try {
-            const { data } = await axios.post('/philosophy/addpost', {
-                title,
-                text,
-                imgUrl,
-                popularity,
-                password
+            let obj = {}
+
+            for (let [i, j] of formdata) {
+                obj[i] = j;
+            }
+
+            const { data } = await axios.post('/philosophy/addpost', {...obj}, {
+                headers: {
+                    'Content-Type':  'multipart/form-data'
+                }
             });
 
             return data;
@@ -84,14 +92,18 @@ export const getPhilosophyPosts = createAsyncThunk(
 //================================= Psychology =============================================
 export const addPsychologyPost = createAsyncThunk(
     '/psychology/addpost',
-    async ({ title, text, imgUrl, popularity, password }) => {
+    async (formdata) => {
         try {
-            const { data } = await axios.post('/psychology/addpost', {
-                title,
-                text,
-                imgUrl,
-                popularity,
-                password
+            let obj = {}
+
+            for (let [i, j] of formdata) {
+                obj[i] = j;
+            }
+
+            const { data } = await axios.post('/psychology/addpost', {...obj}, {
+                headers: {
+                    'Content-Type':  'multipart/form-data'
+                }
             });
 
             return data;
@@ -131,6 +143,7 @@ export const postSlice = createSlice({
             state.status = action.payload.message
             state.title = action.payload.title
             state.text = action.payload.text
+            state.image = action.payload.image
         },
         [addSelfDevelopmentPost.rejected]: (state, action) => {
             state.isLoading = false

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { addSelfDevelopmentPost } from "../../redux/features/postSlice";
+import { addPsychologyPost } from "../../redux/features/postSlice";
 
 function App() {
     const [image, setImage] = useState('');
@@ -29,7 +29,7 @@ function App() {
                 console.log(i, ' = ', j);
             }
 
-            dispatch(addSelfDevelopmentPost(data));
+            dispatch(addPsychologyPost(data));
             setTitle('');
             setText('');
             setPopularity('');
